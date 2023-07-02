@@ -1,3 +1,5 @@
+import { LOCAL_STORAGE_CART_KEY } from "../../src/client/api";
+
 export const mockProductId = 1;
 
 export const mockProduct = {
@@ -16,4 +18,20 @@ export const mockProductInfo = {
   price: 924,
   color: "yellow",
   material: "Soft",
+};
+
+export const mockCart = {
+  key: LOCAL_STORAGE_CART_KEY,
+  data: {
+    1: {
+      name: "Test product 1",
+      count: 3,
+      price: 100,
+    },
+    2: {
+      name: "Test product 2",
+      count: 2,
+      price: 150,
+    },
+  },
 };
