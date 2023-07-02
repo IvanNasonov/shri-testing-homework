@@ -21,13 +21,13 @@ describe("Корзина", async function () {
     const [page] = await puppeteer.pages();
     await page.setViewport({ width: 1000, height: 1024 });
 
-    await page.goto("http://localhost:3000/hw/store");
+    await browser.url("http://localhost:3000/hw/store");
 
     await page.evaluate((mockCart) => {
       localStorage.setItem(mockCart.key, JSON.stringify(mockCart.data));
     }, mockCart);
 
-    await page.goto("http://localhost:3000/hw/store/cart");
+    await browser.url("http://localhost:3000/hw/store/cart");
 
     await page.waitForSelector(".Cart-Table", { timeout: 5000 });
 
@@ -39,13 +39,13 @@ describe("Корзина", async function () {
     const [page] = await puppeteer.pages();
     await page.setViewport({ width: 1000, height: 1024 });
 
-    await page.goto("http://localhost:3000/hw/store");
+    await browser.url("http://localhost:3000/hw/store");
 
     await page.evaluate((mockCart) => {
       localStorage.setItem(mockCart.key, JSON.stringify(mockCart.data));
     }, mockCart);
 
-    await page.goto("http://localhost:3000/hw/store/cart");
+    await browser.url("http://localhost:3000/hw/store/cart");
 
     await page.waitForSelector(".Form", { timeout: 5000 });
 
@@ -57,13 +57,13 @@ describe("Корзина", async function () {
     const [page] = await puppeteer.pages();
     await page.setViewport({ width: 1000, height: 1024 });
 
-    await page.goto("http://localhost:3000/hw/store");
+    await browser.url("http://localhost:3000/hw/store");
 
     await page.evaluate((mockCart) => {
       localStorage.setItem(mockCart.key, JSON.stringify(mockCart.data));
     }, mockCart);
 
-    await page.goto("http://localhost:3000/hw/store/cart");
+    await browser.url("http://localhost:3000/hw/store/cart");
 
     await page.waitForSelector(".Cart", { timeout: 5000 });
 
