@@ -1,4 +1,4 @@
-describe("Продукт", async function () {
+describe("Карточка продукта", async function () {
   it("должна отображать необходимые элементы", async function () {
     const browser = this.browser;
     const puppeteer = await browser.getPuppeteer();
