@@ -8,7 +8,7 @@ describe("Шапка", async function () {
 
     await browser.url("http://localhost:3000/hw/store/catalog");
 
-    await page.waitForSelector(".navbar");
+    await page.waitForSelector(".navbar", { timeout: 5000 });
     await browser.assertView("plain", ".navbar");
   });
 });

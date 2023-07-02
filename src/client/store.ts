@@ -82,6 +82,7 @@ export function createRootReducer(state: Partial<ApplicationState>) {
     produce(state, (draft) => {
       switch (action.type) {
         case "PRODUCTS_LOAD":
+          console.log("setting products to undefined");
           draft.products = undefined;
           break;
         case "PRODUCTS_LOADED":

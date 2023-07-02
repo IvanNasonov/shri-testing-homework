@@ -44,19 +44,16 @@ describe("Хедер", () => {
   });
   it("рядом со ссылкой на корзину должно отображаться количество уникальных товаров в ней", async () => {
     const { getByTestId } = renderWithProviders(<Application />, {
-      initialState: {
-        details: {},
-        cart: {
-          1: {
-            name: "тестовый товар",
-            count: 3,
-            price: 100,
-          },
-          2: {
-            name: "тестовый товар 2",
-            count: 2,
-            price: 100,
-          },
+      initialCartState: {
+        1: {
+          name: "тестовый товар",
+          count: 3,
+          price: 100,
+        },
+        2: {
+          name: "тестовый товар 2",
+          count: 2,
+          price: 100,
         },
       },
     });
@@ -66,7 +63,7 @@ describe("Хедер", () => {
     expect(cartButton).toBeTruthy();
     expect(cartButton.textContent).toBe("Cart (2)");
   });
-  it("если в корзине нет товаров то должено отображаться только название раздела", async () => {
+  it("если в корзине нет товаров то должно отображаться только название раздела", async () => {
     const { getByTestId } = renderWithProviders(<Application />);
 
     const cartButton = getByTestId("cart-link");
